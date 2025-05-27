@@ -1,7 +1,7 @@
 FROM camunda/camunda-bpm-platform:7.20.0
 
-# Khai báo cổng để Render biết
-EXPOSE 8080
+# Copy file cấu hình server.xml để lắng nghe trên 0.0.0.0
+COPY config/server.xml /camunda/conf/server.xml
 
-# Thiết lập biến môi trường PORT (Render yêu cầu điều này)
+EXPOSE 8080
 ENV PORT=8080
