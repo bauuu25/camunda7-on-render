@@ -1,10 +1,8 @@
 FROM camunda/camunda-bpm-platform:run-latest
 
-# Render cung cấp PORT qua biến môi trường, ta dùng giá trị đó
-ENV SERVER_PORT=$PORT
-
-# Camunda mặc định dùng Tomcat (port 8080), nên cần JAVA_OPTS để đổi port
-ENV JAVA_OPTS="-Dserver.port=${PORT} -Djava.security.egd=file:/dev/./urandom"
+# Set port được Render cấp (ví dụ 10000)
+ENV PORT=8080
+ENV JAVA_OPTS="-Dserver.port=$PORT"
 
 EXPOSE 8080
 
