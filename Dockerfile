@@ -1,3 +1,3 @@
-FROM camunda/camunda-bpm-run:latest
+FROM camunda/camunda-platform:run-latest
 
 ENV PORT=8080
